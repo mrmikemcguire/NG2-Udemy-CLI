@@ -1,2 +1,2 @@
 export * from './environment';
-export * from './udemy.component';
+export * from './data-binding.component';
