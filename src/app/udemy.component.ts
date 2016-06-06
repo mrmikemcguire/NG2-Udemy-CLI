@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['udemy.component.css']
 })
 export class UdemyAppComponent {
-  title = 'udemy works!';
+  title = 'Udemy works!';
 }
