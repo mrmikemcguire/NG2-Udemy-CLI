@@ -1,2 +1,2 @@
 export * from './environment';
-export * from './data-binding.component';
+export * from './app.component';
