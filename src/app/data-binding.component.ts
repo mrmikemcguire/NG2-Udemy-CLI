@@ -15,12 +15,18 @@ import {PropertyBindingComponent} from './property-binding.component'
         <br><br>
        
         <section class="child">
-            <my-property-binding [myName] = "name"></my-property-binding>
+            <my-property-binding 
+              [myName] = "name"
+              [myAge] = "age"
+              (hobbiesChanged) = "hobbies = $event">  //$event is NG default
+            </my-property-binding>
         </section>
+        <p>My hobbies are: {{hobbies}}</p>
     </section>
         `,
   directives: [PropertyBindingComponent]
 })
 export class MyAppComponent {
   name = '';
+  hobbies = '';
 }
