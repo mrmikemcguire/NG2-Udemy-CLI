@@ -6,9 +6,15 @@ import { Component } from '@angular/core';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
   template: `
-      This somehow works!
+      <div class = 'container'>
+        ...
+      </div>
+      <div class = 'container'>
+        ...
+      </div>
         `,
 })
 export class MyAppComponent {
-  title = "OK";
+  myself = {name: '', age: ''};
+  confirmedMyself = {name: '', age: ''};
 }
