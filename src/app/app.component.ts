@@ -8,7 +8,7 @@ import {InputComponent} from "./bindings/input.component";
   styleUrls: ['app.component.css'],
   template: `
       <div class = 'container'>
-        <my-input></my-input>
+        <my-input (submitted)="onSubmit($event)"></my-input>
       </div>
       <div class = 'container'>
         ...
@@ -20,4 +20,8 @@ export class MyAppComponent {
   myself = {name: '', age: ''};
   confirmedMyself = {name: '', age: ''};
   title = 'Happy now?';
+
+  onSubmit(myself: {name: string, age: string}) {
+    this.myself = myself;
+  }
 }

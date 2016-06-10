@@ -1,9 +1,12 @@
 import {Component, EventEmitter} from '@angular/core';
 
 @Component ({
-  selector: 'my-input',
+  selector: 'my-confirm',
   template: `
-    <h1>Your details, please</h1>
+    <h1>You submitted the following details.  Is this correct?</h1>
+    <p>Your name is <span class="highlight">{{myself.name}}</span> and your age is
+      <span class="highlight">{{myself.age}}</span> years old.  Please click
+      on 'Confirm' if you have made any changes to this information.</p>
     <div>
       <label for='name'>Your Name</label>
       <input type="text" id='name' [(ngModel)]="myself.name"
@@ -18,32 +21,31 @@ import {Component, EventEmitter} from '@angular/core';
     <div>Filled out: {{isFilled ? 'Yes' : 'No'}}</div>
     <div>Valid: {{isValid ? 'Yes' : 'No'}}</div>
     <br>
-    <button [disabled]="!isValid" [click]="onSubmit()">Submit</button>
-    `,
-  outputs: ['submitted']
+    <button [disabled]="!isValid" [click]="onConfirm()">Submit</button>
+    `
 })
 
-export class InputComponent {
+export class ConfirmComponent {
   myself = {name: '', age: ''};
   isFilled = false;
   isValid = false;
-  submitted = new EventEmitter<{name: string, age: string}>();
+  confirmed = new EventEmitter<{name: string, age: string}>();
 
   onKeyup() {
     if (this.myself.name != '' && this.myself.age != '') {
       this.isFilled = true;
-      } else {
+    } else {
       this.isFilled = false;
-      }
+    }
 
     if (this.myself.name != '' && /^\d+$/.test(this.myself.age)) {
       this.isValid = true;
-      } else {
+    } else {
       this.isValid = false;
-      }
+    }
   }
-  onSubmit() {
-    this.submitted.emit(this.myself);
-  }
-}
 
+  onConfirm ()
+  {
+    this.confirmed.emit(this.myself);
+  }}
