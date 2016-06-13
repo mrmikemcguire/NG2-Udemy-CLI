@@ -21,7 +21,7 @@ import {Component, EventEmitter} from '@angular/core';
     <div>Filled out: {{isFilled ? 'Yes' : 'No'}}</div>
     <div>Valid: {{isValid ? 'Yes' : 'No'}}</div>
     <br>
-    <button [disabled]="!isValid" [click]="onConfirm()">Submit</button>
+    <button [disabled]="!isValid" (click)="onConfirm()">Submit</button>
     `
 })
 
@@ -48,4 +48,5 @@ export class ConfirmComponent {
   onConfirm ()
   {
     this.confirmed.emit(this.myself);
-  }}
+  }
+}
