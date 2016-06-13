@@ -11,7 +11,7 @@ import {InputComponent} from "./bindings/input.component";
         <my-input (submitted)="onSubmit($event)"></my-input>
       </div>
       <div class = 'container'>
-        ...
+        .....
       </div>
         `,
   directives: [InputComponent]

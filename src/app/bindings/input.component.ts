@@ -18,8 +18,8 @@ import {Component, EventEmitter} from '@angular/core';
     <div>Filled out: {{isFilled ? 'Yes' : 'No'}}</div>
     <div>Valid: {{isValid ? 'Yes' : 'No'}}</div>
     <br>
-    <button [disabled]="!isValid" [click]="onSubmit()">Submit</button>
-    `,
+    <button [disabled]="!isValid" (click)="onSubmit()">Submit</button>
+      `,
   outputs: ['submitted']
 })
 
