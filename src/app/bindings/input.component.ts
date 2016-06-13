@@ -20,6 +20,7 @@ import {Component, EventEmitter} from '@angular/core';
     <br>
     <button [disabled]="!isValid" (click)="onSubmit()">Submit</button>
       `,
+  inputs: ['myself'],
   outputs: ['submitted']
 })
 
